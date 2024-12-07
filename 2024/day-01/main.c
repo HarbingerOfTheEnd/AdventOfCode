@@ -1,4 +1,3 @@
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,6 +6,7 @@
 #   include <sysexits.h>
 #else
 #   define EX_USAGE 64
+#   define EX_NOINPUT 66
 #endif
 
 size_t getlines(FILE *fp) {
