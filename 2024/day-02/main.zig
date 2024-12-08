@@ -17,6 +17,11 @@ const exit = std.process.exit;
 
 const EX_USAGE = 64;
 
+const Part = enum {
+    part1,
+    part2,
+};
+
 pub fn main() !void {
     var arena = ArenaAllocator.init(page_allocator);
     defer arena.deinit();
@@ -35,12 +40,13 @@ pub fn main() !void {
         return error.Usage;
     }
 
-    const safe_report_count = try find_safe_report_count(allocator, argv[1]);
-    try stdout.print("Part 1: {}\n", .{safe_report_count});
+    const safe_report_count_part_1 = try find_safe_report_count(allocator, argv[1], .part1);
+    try stdout.print("Part 1: {}\n", .{safe_report_count_part_1});
+    const safe_report_count_part_2 = try find_safe_report_count(allocator, argv[1], .part2);
+    try stdout.print("Part 2: {}\n", .{safe_report_count_part_2});
 }
 
-fn find_safe_report_count(allocator: Allocator, filename: [:0]const u8) !u64 {
-    // const stdout = getStdOut().writer();
+fn find_safe_report_count(allocator: Allocator, filename: [:0]const u8, part: Part) !u64 {
     const file = try cwd().openFileZ(filename, .{ .mode = .read_only });
     defer file.close();
 
@@ -67,7 +73,7 @@ fn find_safe_report_count(allocator: Allocator, filename: [:0]const u8) !u64 {
 
         var safe = isSafe(levels.items);
 
-        if (!safe) {
+        if (part == .part2 and !safe) {
             for (0..levels.items.len) |i| {
                 const temp = levels.orderedRemove(i);
                 safe = isSafe(levels.items);
