@@ -15,3 +15,9 @@ test-day-03: 2024/day-03/main.py
 
 day-03: 2024/day-03/main.py
 	./2024/day-03/main.py ./2024/day-03/input.txt
+
+test-day-04: 2024/day-04/main.go
+	go run ./2024/day-04/main.go ./2024/day-04/test-input.txt
+
+day-04: 2024/day-04/main.go
+	go run ./2024/day-04/main.go ./2024/day-04/input.txt
