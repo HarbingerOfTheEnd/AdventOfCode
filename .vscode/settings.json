@@ -3,5 +3,10 @@
         "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
         "clang-analyzer-optin.portability.UnixAPI",
         "clang-analyzer-unix.Malloc"
-    ]
+    ],
+    "deno.enable": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "denoland.vscode-deno",
+        "editor.formatOnSave": true,
+    }
 }
