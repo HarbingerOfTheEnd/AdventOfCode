@@ -27,3 +27,9 @@ test-day-05: 2024/day-05/main.ts
 
 day-05: 2024/day-05/main.ts
 	./2024/day-05/main.ts ./2024/day-05/input.txt
+
+test-day-06: 2024/day-06/Main.java
+	javac 2024/day-06/Main.java && java 2024.day-06.Main ./2024/day-06/test-input.txt
+
+day-06: 2024/day-06/Main.java
+	javac 2024/day-06/Main.java && java 2024.day-06.Main ./2024/day-06/input.txt
