@@ -23,7 +23,7 @@ day-04: 2024/day-04/main.go
 	go run ./2024/day-04/main.go ./2024/day-04/input.txt
 
 test-day-05: 2024/day-05/main.ts
-    ./2024/day-05/main.ts ./2024/day-05/test-input.txt
+	./2024/day-05/main.ts ./2024/day-05/test-input.txt
 
 day-05: 2024/day-05/main.ts
-    ./2024/day-05/main.ts ./2024/day-05/input.txt
+	./2024/day-05/main.ts ./2024/day-05/input.txt
