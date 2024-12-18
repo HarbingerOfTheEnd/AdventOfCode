@@ -33,3 +33,9 @@ test-day-06: 2024/day-06/Main.java
 
 day-06: 2024/day-06/Main.java
 	javac 2024/day-06/Main.java && java 2024/day-06/Main.java ./2024/day-06/input.txt
+
+test-day-07: 2024/day-07/main.rs
+	cargo run -- ./2024/day-07/test-input.txt
+
+day-07: 2024/day-07/main.rs
+	cargo run -- ./2024/day-07/input.txt
