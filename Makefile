@@ -5,10 +5,10 @@ day-01: 2024/day-01/main.c
 	clang -o 2024/day-01/main 2024/day-01/main.c -Wall -Wextra -Werror -std=c23 -pedantic -O3 && ./2024/day-01/main ./2024/day-01/input.txt
 
 test-day-02: 2024/day-02/main.zig
-	zig run 2024/day-02/main.zig -- ./2024/day-02/test-input.txt
+	zig run 2024/day-02/main.zig -O ReleaseSafe -- ./2024/day-02/test-input.txt
 
 day-02: 2024/day-02/main.zig
-	zig run 2024/day-02/main.zig -- ./2024/day-02/input.txt
+	zig run 2024/day-02/main.zig -O ReleaseSafe -- ./2024/day-02/input.txt
 
 test-day-03: 2024/day-03/main.py
 	./2024/day-03/main.py ./2024/day-03/test-input.txt
@@ -35,7 +35,7 @@ day-06: 2024/day-06/Main.java
 	javac 2024/day-06/Main.java && java 2024/day-06/Main.java ./2024/day-06/input.txt
 
 test-day-07: 2024/day-07/main.rs
-	cargo run -- ./2024/day-07/test-input.txt
+	cargo run -r -- ./2024/day-07/test-input.txt
 
 day-07: 2024/day-07/main.rs
-	cargo run -- ./2024/day-07/input.txt
+	cargo run -r -- ./2024/day-07/input.txt
