@@ -3,17 +3,16 @@
 #include <stdlib.h>
 
 #ifdef __unix__
-#   include <sysexits.h>
+#include <sysexits.h>
 #else
-#   define EX_USAGE 64
-#   define EX_NOINPUT 66
+#define EX_USAGE 64
+#define EX_NOINPUT 66
 #endif
 
 size_t getlines(FILE *fp) {
     size_t n_lines = 0;
 
-    for (int c = fgetc(fp); c != EOF; c = fgetc(fp))
-        n_lines += (c == '\n');
+    for (int c = fgetc(fp); c != EOF; c = fgetc(fp)) n_lines += (c == '\n');
 
     fseek(fp, 0, SEEK_SET);
     return n_lines;
@@ -36,17 +35,18 @@ int64_t find_n_same_numbers(int32_t *array, int32_t value, size_t n_lines) {
     int64_t n = 0;
 
     for (size_t i = 0; i < n_lines; i++)
-        if (array[i] == value)
-            n++;
+        if (array[i] == value) n++;
 
     return n;
 }
 
-int64_t find_total_similarity_score(int32_t *left, int32_t *right, size_t n_lines) {
+int64_t find_total_similarity_score(int32_t *left, int32_t *right,
+                                    size_t n_lines) {
     int64_t total_similarity_score = 0;
 
     for (size_t i = 0; i < n_lines; i++)
-        total_similarity_score += left[i] * find_n_same_numbers(right, left[i], n_lines);
+        total_similarity_score +=
+            left[i] * find_n_same_numbers(right, left[i], n_lines);
 
     return total_similarity_score;
 }
@@ -87,7 +87,8 @@ int main(const int argc, const char **argv) {
     int64_t total_distance = find_total_distance(left, right, n_lines);
     printf("Part 1: %ld\n", total_distance);
 
-    int64_t total_similarity_score = find_total_similarity_score(left, right, n_lines);
+    int64_t total_similarity_score =
+        find_total_similarity_score(left, right, n_lines);
     printf("Part 2: %ld\n", total_similarity_score);
 
     free(left);
