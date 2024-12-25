@@ -45,3 +45,9 @@ test-day-08: 2024/day-08/main.cc
 
 day-08: 2024/day-08/main.cc
 	clang++ -o 2024/day-08/main 2024/day-08/main.cc -Wall -Wextra -Werror -std=c++23 -pedantic -fpermissive -O3 && ./2024/day-08/main ./2024/day-08/input.txt
+
+test-day-09: 2024/day-09/main.exs
+	2024/day-09/main.exs ./2024/day-09/test-input.txt
+
+day-09: 2024/day-09/main.exs
+	2024/day-09/main.exs ./2024/day-09/input.txt
