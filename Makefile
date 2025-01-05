@@ -57,3 +57,9 @@ test-day-10: 2024/day-10/main.rb
 
 day-10: 2024/day-10/main.rb
 	./2024/day-10/main.rb ./2024/day-10/input.txt
+
+test-day-11: 2024/day-11/Program.cs
+	dotnet run 2024/day-11/Program.cs ./2024/day-11/test-input.txt
+
+day-11: 2024/day-11/Program.cs
+	dotnet run 2024/day-11/Program.cs ./2024/day-11/input.txt
