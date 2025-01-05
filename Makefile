@@ -51,3 +51,9 @@ test-day-09: 2024/day-09/main.exs
 
 day-09: 2024/day-09/main.exs
 	2024/day-09/main.exs ./2024/day-09/input.txt
+
+test-day-10: 2024/day-10/main.rb
+	./2024/day-10/main.rb ./2024/day-10/test-input.txt
+
+day-10: 2024/day-10/main.rb
+	./2024/day-10/main.rb ./2024/day-10/input.txt
