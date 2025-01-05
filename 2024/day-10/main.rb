@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 DIRECTIONS = [[1, 0], [0, 1], [-1, 0], [0, -1]].freeze
+EX_USAGE = 64
 
 def compute_grid(map)
   grid = {}
@@ -40,6 +41,10 @@ def compute_trail_score(coords, map, grid, bounds, part2: false, score: 0)
 end
 
 def main(argv)
+  if argv.size != 1
+    warn 'Usage: ruby 2024/day-10/main.rb <file>'
+    exit EX_USAGE
+  end
   map = File.readlines(argv.first).map { |line| line.chomp.chars }.map { |row| row.map(&:to_i) }
   grid = compute_grid(map)
   scores = []
